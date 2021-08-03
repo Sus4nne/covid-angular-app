@@ -1,0 +1,27 @@
+<!-- <div *ngFor="let stat of stats">{{stat.Date_of_publication}}</div> -->
+<div *ngIf='totalOfNL'>
+    <p>{{totalOfNL.entityName}}</p>
+    <p>{{this.today}}</p>
+    <p>Aantal besmettingen: {{totalOfNL.totalReported}}</p>
+    <p>Aantal opgenomen in ziekenhuis: {{totalOfNL.totalHospitalised}}</p>
+    <p>Aantal overleden: {{totalOfNL.totalDeceased}}</p>
+</div>
+<p>------------</p>
+<div *ngFor="let stat of daylist">
+    {{stat.Date_of_publication}} 
+    {{stat.Municipality_name}} 
+    {{stat.Total_reported}}
+</div>
+
+
+<button class="btn btn-success" type="button" style="background-color:
+#8616f6" (click)="getTotalsofProvinces(this.daylist, this.today)">Reload</button>
+
+<button class="btn btn-success" type="button" style="background-color:
+#16b7f6" (click)="getTotalsofMunicipalities(this.daylist, this.today)">Reload</button>
+
+<button class="btn btn-success" type="button" style="background-color:
+hsl(39, 93%, 53%)" (click)="getTotalsofNederlandOnDay(this.daylist, this.today)">Reload</button>
+
+<button class="btn btn-success" type="button" style="background-color:
+hsl(249, 93%, 53%)" (click)="addDays(this.date, -10)">Reload</button>
